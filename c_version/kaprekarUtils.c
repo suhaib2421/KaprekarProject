@@ -1,5 +1,5 @@
-#include<math.h>
-
+#include <math.h>
+#include <stdio.h>
 #include "kaprekarUtils.h"
 
 /**
@@ -24,24 +24,24 @@
  */
 int isKaprekar(int n) {
 
+
   if(n < 1) {
-    return false;
+    return 0;
   }
 
   int i;
   long square = n * (long) n;
-  int numDigits = (int) log10(n) + 1;
-  long modulus = 0;
+  int numDigits = (int) log10(square) + 1;
+  long modulus = 1;
   long first, second;
-  for(i=1; i<=numberOfDigits; i++) {
-    modulous *= 10;
+  for(i=1; i<=numDigits; i++) {
+    modulus *= 10;
     first = square / modulus;
     second = square % modulus;
-    if(second > 0 &&
-       first + second == n) {
+    }if(second > 0 && first + second == n) {
       return 1;
     }
-  }
+  
   return 0;
   
 }
